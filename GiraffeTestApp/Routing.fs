@@ -16,7 +16,7 @@ open Giraffe.Razor.Middleware
 open GiraffeTestApp.Models
 
 
-let webApp : HttpFunc -> HttpContext -> HttpFuncResult =
+let webApp : HttpHandler =
     choose [
         GET >=>
             choose [
