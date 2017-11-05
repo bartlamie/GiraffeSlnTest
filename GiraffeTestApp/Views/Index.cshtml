@@ -3,11 +3,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Giraffe</title>
+    <title>Giraffe file upload</title>
 </head>
 <body>
     <div>
         <h3>@Model.Text</h3>
     </div>
+
+    <h2>Small file upload</h2>
+    
+    <form enctype="multipart/form-data" method="POST" action="small-upload">
+        <p>Upload a file</p>
+        <input type="file" name="files" />
+        <input type="submit" value="Upload" />
+    </form>
+
+    <h2>Large file upload</h2>
+
+    <form method="POST" enctype="multipart/form-data" action="large-upload">
+        <p>Upload a file</p>
+        <input type="file" name="files" />
+        <input type="submit" name="Upload" />
+    </form>
 </body>
 </html>
