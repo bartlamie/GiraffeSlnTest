@@ -61,7 +61,7 @@ let configureLogging (builder : ILoggingBuilder) =
 
 [<EntryPoint>]
 let main argv =
-    let contentRoot = Directory.GetCurrentDirectory()
+    let contentRoot = AppDomain.CurrentDomain.BaseDirectory
     let webRoot     = Path.Combine(contentRoot, "WebRoot")
     WebHostBuilder()
         .UseKestrel()
