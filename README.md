@@ -28,5 +28,7 @@ To then run the project on your localhost, use the following command from the Gi
 dotnet run
 ```
 
+Alternatively, it now works to start the giraffe app via the Ionide project explorer.
+
 ## Description
 Wonderful test app that everyone will absolutely adore.
