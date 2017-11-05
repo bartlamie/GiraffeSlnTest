@@ -14,18 +14,7 @@ open Giraffe.Middleware
 open Giraffe.Razor.HttpHandlers
 open Giraffe.Razor.Middleware
 open GiraffeTestApp.Models
-
-// ---------------------------------
-// Web app
-// ---------------------------------
-
-let webApp =
-    choose [
-        GET >=>
-            choose [
-                route "/" >=> razorHtmlView "Index" { Text = "Hello world, from Giraffe!" }
-            ]
-        setStatusCode 404 >=> text "Not Found" ]
+open GiraffeTestApp
 
 // ---------------------------------
 // Error handler
@@ -46,7 +35,7 @@ let configureApp (app : IApplicationBuilder) =
     app.UseCors(configureCors)
        .UseGiraffeErrorHandler(errorHandler)
        .UseStaticFiles()
-       .UseGiraffe(webApp)
+       .UseGiraffe(Routing.webApp)
 
 let configureServices (services : IServiceCollection) =
     let sp  = services.BuildServiceProvider()
